@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.shortcuts import render
 # Create your views here.
 
 
 def test_view(request):
-    print 'hereeeeeeeeeeeeeeeeeeeeeeeeee'
-    return HttpResponse("Hello, world. You're at the polls index.")
+    context = {'name': 'waseeeem'}
+    return render(request, 'web/test.html', context)
