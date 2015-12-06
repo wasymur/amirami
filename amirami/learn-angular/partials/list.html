@@ -1,0 +1,21 @@
+<div>
+    Name: <input type="text" ng-model="name"> Hello, {{name}}
+    <hr>
+    <h3>Thing came from a controller:</h3>
+    <div class="search">
+        <input type="text" placeholder="start typing" ng-model="query">
+        <select ng-model="peopleOrder">
+            <option value="name">Name</option>
+            <option value="shortname">Short name</option>
+        </select>
+        <input type="radio" ng-model="rev" name="direction" > Desc
+        <input type="radio" ng-model="rev" name="direction" value="reverse"> Asc
+    </div>
+    <div>
+        <div ng-repeat = "person in people | filter:query | orderBy:peopleOrder:rev">
+            {{ person.name | uppercase }} - {{ person.shortname }} <br>
+            {{ person.bio }}
+            <hr>
+        </div>
+    </div>
+</div>

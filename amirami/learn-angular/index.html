@@ -4,27 +4,13 @@
     <meta charset="UTF-8">
     <title>Angular Demo</title>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="lib/js/controllers.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
 </head>
-<body ng-controller="amiramiCtrl">
-    Name: <input type="text" ng-model="name"> Hello, {{name}}
-    <hr>
-    <h3>Thing came from a controller:</h3>
-    <div class="search">
-        <input type="text" placeholder="start typing" ng-model="query">
-        <select ng-model="peopleOrder">
-            <option value="name">Name</option>
-            <option value="shortname">Short name</option>
-        </select>
-        <input type="radio" ng-model="rev" name="direction" > Desc
-        <input type="radio" ng-model="rev" name="direction" value="reverse"> Asc
-    </div>
-    <div>
-        <div ng-repeat = "person in people | filter:query | orderBy:peopleOrder:rev">
-            {{ person.name | uppercase }} - {{ person.shortname }} <br>
-            {{ person.bio }}
-            <hr>
-        </div>
+<body >
+    <div ng-view>
+
     </div>
 </body>
 </html>
